@@ -132,7 +132,12 @@
 
                     <div class="sidebar-widget">
                         <h4>今日巡检</h4>
-                        <canvas width="150" height="80" id="chart_gauge_01" class="" style="width: 160px; height: 100px;"></canvas>
+                        <div data-percent="86" id="easypiechart1" style="position:relative">
+                            <!-- <span class="percent"></span> -->
+                            <span style="position: absolute;
+                                    left: 77px;
+                                    top: 35px;">86%</span>
+                        </div>
                         <div class="goal-wrapper">
                           <span id="gauge-text" class="gauge-value pull-left">0</span>
                           <span class="gauge-value pull-left">%</span>
@@ -336,7 +341,8 @@
     <script src="../vendors/nprogress/nprogress.js"></script>
     <!-- iCheck -->
     <script src="../vendors/iCheck/icheck.min.js"></script>
-    
+    <!-- easy-pie-chart -->
+    <script src="../vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
     <!--ly-->
@@ -348,8 +354,17 @@
 
     <script type="text/javascript" src="../js/yu/solid-gauge.js"></script>
     
-    <script type="text/javascript" src="../js/yu/ly-charts2.js"></script>
-    <script type="text/javascript" src="../js/yu/ly-simcharts.js"></script>
+    <script>
+    $(function(){
+      $('#easypiechart1').easyPieChart({
+        //your configuration goes here
+        "size" : "90",
+        "barColor" :"#26b99a",
+        "lineWidth" : "11",
+        "scaleLength" : "0"
 
+      });
+    })
+    </script>
   </body>
 </html>
